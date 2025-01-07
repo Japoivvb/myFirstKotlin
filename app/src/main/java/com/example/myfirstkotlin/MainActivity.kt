@@ -39,8 +39,20 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     // variable immutable, constant
     val message:String="in"
 
+    // array
+    val numbers = arrayOf(2,4,6)// declare
+    lateinit var myEmptyArray: Array<Int> // declare without value
+    println(numbers[1])// read 1 position
+    println(numbers.joinToString())// read all positions
+    println(numbers.sum()) // sum all items
+    println("total items ${numbers.size}") // total items
+    for(number in numbers){ // list each item
+        println("number is $number")
+    }
+
+
     Text(
-        // concatentate string templates
+        // concatenate string templates
         text = "${getGreeting()} $name! $message $year",
         modifier = modifier
     )
