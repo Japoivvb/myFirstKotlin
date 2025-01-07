@@ -33,10 +33,21 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
+    // variable mutable, it can changed
+    var year:Int=2024
+    year++
+    // variable immutable, constant
+    val message:String="in"
+
     Text(
-        text = "Hello $name!",
+        // concatentate string templates
+        text = "${getGreeting()} $name! $message $year",
         modifier = modifier
     )
+}
+
+fun getGreeting(): String {
+    return "Hello"
 }
 
 @Preview(showBackground = true)
