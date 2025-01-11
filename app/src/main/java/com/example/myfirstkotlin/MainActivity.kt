@@ -50,6 +50,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         println("number is $number")
     }
 
+    // any
+    println(getClass(10)) // return Int
+
 
     Text(
         // concatenate string templates
@@ -60,6 +63,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 fun getGreeting(): String {
     return "Hello"
+}
+
+fun getClass(obj:Any): Any {
+    // ? Elvis operator,return not null value or unknown
+    return obj::class.simpleName?:"unknown"
 }
 
 @Preview(showBackground = true)
